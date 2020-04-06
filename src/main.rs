@@ -8,7 +8,7 @@ use std::{
     sync::{Arc, Mutex},
 };
 
-/// Rolls dices.
+/// Rolls dice.
 #[derive(Clap)]
 #[clap(version = env!("CARGO_PKG_VERSION"), author = env!("CARGO_PKG_AUTHORS"))]
 struct Arguments {
@@ -65,7 +65,7 @@ fn main() {
     }
 }
 
-/// Rolls dices and shows the sum of them.
+/// Rolls dice and shows the sum of them.
 fn process_sum(roll: DiceRoll) {
     let sum: u64 = repeat(())
         .take(roll.repetitions as usize)
@@ -75,7 +75,7 @@ fn process_sum(roll: DiceRoll) {
     println!("{}", sum);
 }
 
-/// Rolls dices and shows each roll.
+/// Rolls dice and shows each roll.
 fn process_verbose(roll: DiceRoll) {
     let stdout = Arc::new(Mutex::new(BufWriter::new(stdout())));
 
